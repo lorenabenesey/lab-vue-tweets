@@ -9,15 +9,15 @@
     <div className="body">
       <div className="top">
         <span className="user">
-          <span className="name">{{ name }}</span>
-          <span className="handle">@{{ handle }}</span>
+          <Name :name ="name"/>
+          <span className="handle">@{{ tweet.handle.value }}</span>
         </span>
 
-        <span className="timestamp">{{ timestamp }}</span>
+        <span className="timestamp">{{ tweet.timestamp }}</span>
       </div>
 
       <p className="message">
-        {{ message }}
+        {{ $tweets.message.value }}
       </p>
 
       <div className="actions">
@@ -35,7 +35,9 @@
 
 <script setup>
 import { ref } from 'vue';
-const props = defineProps(["tweet"]);
+import Mame from './Name.vue';
+const tweet = defineProps(["tweet"]);
+
 
 
 </script>
